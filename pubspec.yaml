@@ -62,9 +62,13 @@ flutter:
         - asset: assets/BungeeShade-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-    - family: KaushanScript
+
+    - family: Exo2
       fonts:
-        - asset: assets/KaushanScript-Regular.ttf
+        - asset: assets/Exo2-Regular.ttf
+        - asset: assets/Exo2-Italic.ttf
+          style: italic
+          
     - family: PermanentMarker
       fonts:
         - asset: assets/PermanentMarker-Regular.ttf

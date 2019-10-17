@@ -1,11 +1,15 @@
 import 'dart:async';
-import 'landing_page.dart';
+import 'login_page.dart';
 import 'package:flutter/material.dart';
 
 
 void main() {
   runApp(MaterialApp(
     home: App(),
+    theme: ThemeData(
+      fontFamily: "Exo2",
+      primaryColor: Colors.white,
+    ),
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -23,7 +27,7 @@ class _AppState extends State<App> {
 
   void navigationPage() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => LandingPage()));
+        .push(MaterialPageRoute(builder: (context) => LoginPage()));
   }
 
   @override
