@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:splash_screen/landing_page.dart';
+import 'package:splash_screen/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -48,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
 
             Divider(
               color: Colors.transparent,
-              height: 20.0,
+              height: 30.0,
             ),
 
 //username
@@ -67,8 +68,9 @@ class _LoginPageState extends State<LoginPage> {
                 enabledBorder: const OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.black),
                 ),
-                labelText: "User name :",
-                errorText: user == false ? "Field empty" : "",
+                labelText: "Username :",
+                errorText: user == false ? "Field empty" : null,
+                errorStyle: TextStyle(color: Colors.white),
                 labelStyle: new TextStyle(
                   color: Colors.white,
                   fontSize: 19.0,
@@ -99,7 +101,8 @@ class _LoginPageState extends State<LoginPage> {
                   borderSide: const BorderSide(color: Colors.black),
                 ),
                 labelText: "Password :",
-                errorText: pass == false ? "Field empty" : "",
+                errorText: pass == false ? "Field empty" : null,
+                errorStyle: TextStyle(color: Colors.white),
                 labelStyle: new TextStyle(
                   color: Colors.white,
                   fontSize: 19.0,
@@ -109,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
 
             Divider(
               color: Colors.transparent,
-              height:20.0,
+              height:30.0,
             ),
 
 //Login Button
@@ -117,6 +120,7 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
               padding: EdgeInsets.fromLTRB(90.0, 5.0,90.0, 5.0),
               child: RaisedButton(
+                
                 shape: new RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
                 padding: EdgeInsets.fromLTRB(45.0, 12.0, 45.0, 12.0),
@@ -155,22 +159,24 @@ class _LoginPageState extends State<LoginPage> {
 //About
 
             Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text("This is a copyright App !!",style: TextStyle(color: Colors.white),),
-                  Divider(
-                    color: Colors.transparent,
-                    height: 5.0,
+              child: Center(
+                child:GestureDetector(
+                  child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                  Text("Don't have an Account ?",style: TextStyle(color: Colors.white),),
+                  SizedBox(
+                    width: 5.0,
                   ),
-                  Text("This is a dummy login page for application !!",style: TextStyle(color: Colors.white),),
-                  Divider(
-                    color: Colors.transparent,
-                    height: 5.0,
-                  ),
-                  Text("Good Day !!",style: TextStyle(color: Colors.white),)
-                ],
-              ),
+                  Text("Register here",style: TextStyle(color: Colors.white,fontSize: 20.0),)
+                  ],
+                ),
+                onTap: ()
+                {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Register()));
+                },
+                )
+              )
             )
           ],
         ),

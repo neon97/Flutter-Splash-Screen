@@ -9,6 +9,9 @@ void main() {
     theme: ThemeData(
       fontFamily: "Exo2",
       primaryColor: Colors.white,
+      dividerColor: Colors.transparent,
+      primaryTextTheme: TextTheme(),
+      primaryIconTheme: IconThemeData(color: Colors.white)
     ),
     debugShowCheckedModeBanner: false,
   ));
