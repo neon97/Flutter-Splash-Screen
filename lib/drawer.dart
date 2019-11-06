@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-
 class Drawers extends StatefulWidget {
+ 
   @override
   _DrawersState createState() => _DrawersState();
 }
@@ -9,8 +9,6 @@ class Drawers extends StatefulWidget {
 class _DrawersState extends State<Drawers> {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      
-    );
+    return Drawer();
   }
 }
