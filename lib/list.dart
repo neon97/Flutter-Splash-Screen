@@ -23,5 +23,14 @@ List<String> blogname = [
 ];
 
 List<String> blogdetails = [
-  "Apple says that they are the first notebook makers that \nhas make a sale of worth 50 millions selling more then 80 millions of notebook widely",
+  "Apple says that they are the first notebook makers that has make a sale of worth 50 millions selling more then 80 millions of notebook widely With up to 12 hours of battery life, MacBook Air is your day‑in, day‑out dynamo macOS Catalina The power of Mac. Testing conducted by Apple in October 2018 using pre-production 1.6GHz dual-core Intel Core i5–based MacBook Air systems with 8GB of RAM and 256GB SSD.",
+];
+
+List item = [
+  "Blog",
+  "Macbook",
+  "Application",
+  "Strategy",
+  "Analytics",
+  "Currency"
 ];

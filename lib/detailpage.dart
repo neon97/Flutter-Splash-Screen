@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:splash_screen/list.dart';
+import 'package:flutter_tags/tag.dart';
 
 class Detail extends StatefulWidget {
-  int index;
+  final int index;
   Detail({
     this.index,
   });
@@ -49,38 +50,83 @@ class _DetailState extends State<Detail> {
               height: 20.0,
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(20.0,0,20.0,0),
+              padding: EdgeInsets.fromLTRB(20.0, 0, 20.0, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      CircleAvatar(
-                        backgroundImage: AssetImage("image/logo.png"),
+                      Row(
+                        children: <Widget>[
+                          CircleAvatar(
+                            backgroundImage: AssetImage("image/logo.png"),
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Text(
+                            "Anonymous #*",
+                            style: TextStyle(
+                                fontSize: 17.0, fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        "Anonymous #*",
-                        style: TextStyle(
-                            fontSize: 17.0, fontWeight: FontWeight.bold),
-                      ),
+                      IconButton(
+                        icon: Icon(
+                          pres == false
+                              ? Icons.favorite_border
+                              : Icons.favorite,
+                          color: Colors.red,
+                          size: 30.0,
+                        ),
+                        onPressed: () {
+                          if (pres == true) {
+                            setState(() {
+                              pres = false;
+                            });
+                          } else {
+                               setState(() {
+                            pres = true;
+                            });
+                          }
+                        },
+                      )
                     ],
                   ),
                   Divider(
                     color: Colors.transparent,
                     height: 20.0,
                   ),
-               Text("Description..",style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),),
-
-               Divider(
-                 color: Colors.transparent,
-                 height: 10.0,
-               ),
-               
-               Text(blogdetails[0])
+                  Text(
+                    "Description..",
+                    style:
+                        TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
+                  ),
+                  Divider(
+                    color: Colors.transparent,
+                    height: 10.0,
+                  ),
+                  Text(blogdetails[0]),
+                  Divider(
+                    color: Colors.transparent,
+                    height: 20.0,
+                  ),
+                  Tags(
+                    itemCount: item.length,
+                    itemBuilder: (int index) {
+                      return Tooltip(
+                          message: "Tags",
+                          child: ItemTags(
+                            pressEnabled: false,
+                            activeColor: Colors.deepOrange,
+                            padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                            index: index,
+                            title: item[index],
+                          ));
+                    },
+                  )
                 ],
               ),
             )
@@ -89,4 +135,6 @@ class _DetailState extends State<Detail> {
       ),
     );
   }
+
+  bool pres = false;
 }
